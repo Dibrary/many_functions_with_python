@@ -1,9 +1,9 @@
 
 import smtplib
 
-smtp_info= dict({'smpt_server':'smtp.naver.com',
-                 'smtp_user_id':'송신자 메일 계정',
-                 'smtp_user_pw' :'송신자 메일 비밀번호',
+smtp_infos= dict({'smtp_server':'smtp.naver.com',
+                 'smtp_user_id':'송신자 계쩡',
+                 'smtp_user_pw' :'송신자 비번',
                  'smtp_port':587})
 
 def send_email(smtp_info, msg):
