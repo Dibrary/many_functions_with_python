@@ -43,6 +43,19 @@ def update_tokens(app_key, filename):
         save_tokens(filename, tokens)
     return tokens
 
+def send_message(filename, template):
+    tokens = load_tokens(filename)
+    headers={
+        "Authorization":"Bearer"+tokens['access_token']
+    }
+    payload = {
+        "template_object":json.dumps(template)
+    }
+    url = "https://kapi.kakao.com/v2/api/talk/memo/default/send"
+    res = requests.post(url, data=payload, headers=headers)
+
+    return res
+
 tokens = "토큰은 비밀"
 save_tokens(KAKAO_TOKEN_FILENAME, tokens)
 
