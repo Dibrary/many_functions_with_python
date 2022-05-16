@@ -150,5 +150,8 @@ for place in places:
     }
     contents.append(content)
 
-res =
-
+res = send_message(KAKAO_TOKEN_FILENAME, template)
+if res.json().get('result_code') == 0:
+    print("성공")
+else:
+    print("성공적으로 보내지 못했음.", res.json())
